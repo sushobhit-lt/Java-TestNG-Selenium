@@ -38,7 +38,7 @@ public class TestNGRelativeLocator {
         caps.setCapability("platform", "Windows 10");
         caps.setCapability("browserName", "Chrome");
         caps.setCapability("version", "94");
-        caps.setCapability("build", "Selenium 4 Relative Locator");
+        caps.setCapability("build", "demo jay");
         caps.setCapability("name", m.getName() + " - " + this.getClass().getName());
         caps.setCapability("plugin", "git-testng");
         caps.setCapability("selenium_version", "4.0.0-beta-3");
@@ -65,6 +65,7 @@ public class TestNGRelativeLocator {
                 .toRightOf(heightLabel));
 
         heightInput.sendKeys("181");
+        Thread.sleep(3000);
 
         // find the weight input using combination of below and toRightOf relative locator
         // weight input is below height input and right of weight label
@@ -72,12 +73,14 @@ public class TestNGRelativeLocator {
                 .below(heightInput).toRightOf(weightLabel));
 
         weightInput.sendKeys("75");
+        Thread.sleep(3000);
 
         // find the calculate button which is below the weight label
         WebElement calculateButton = driver.findElement(withTagName("input")
                 .below(weightLabel));
 
         calculateButton.click();
+        Thread.sleep(3000);
 
         // find the read only input below calculate button to verify value
         Assert.assertEquals("22.9", driver.findElement(withTagName("input")
