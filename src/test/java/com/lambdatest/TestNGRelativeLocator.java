@@ -37,8 +37,8 @@ public class TestNGRelativeLocator {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platform", "Windows 10");
         caps.setCapability("browserName", "Chrome");
-        caps.setCapability("version", "latest");
-        caps.setCapability("build", "TestNG With Java");
+        caps.setCapability("version", "94");
+        caps.setCapability("build", "Selenium 4 Relative Locator");
         caps.setCapability("name", m.getName() + " - " + this.getClass().getName());
         caps.setCapability("plugin", "git-testng");
         caps.setCapability("selenium_version", "4.0.0-beta-3");
@@ -51,7 +51,9 @@ public class TestNGRelativeLocator {
     }
 
     @Test
-    public void relativeLocatorTest() {
+    public void relativeLocatorTest() throws InterruptedException {
+
+        driver.get("http://cookbook.seleniumacademy.com/mobilebmicalculator.html");
 
         // find the height and weight labels using css selector
         WebElement heightLabel = driver.findElement(By.cssSelector("label[for='heightCMS']"));
