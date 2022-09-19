@@ -23,15 +23,18 @@ public class TestNGTodo1 {
         String username = System.getenv("LT_USERNAME") == null ? "Your LT Username" : System.getenv("LT_USERNAME");
         String authkey = System.getenv("LT_ACCESS_KEY") == null ? "Your LT AccessKey" : System.getenv("LT_ACCESS_KEY");
         ;
-        String hub = "@hub.lambdatest.com/wd/hub";
+        String hub = "@stage-hub.lambdatest.com/wd/hub";
 
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platform", "MacOS Catalina");
-        caps.setCapability("browserName", "Safari");
+        caps.setCapability("browserName", "chrome");
         caps.setCapability("version", "latest");
         caps.setCapability("build", "TestNG With Java");
         caps.setCapability("name", m.getName() + " - " + this.getClass().getName());
         caps.setCapability("plugin", "git-testng");
+         caps.setCapability("fixedIP", "10.244.32.157");
+          caps.setCapability("enableNetworkThrottling", true);
+
 
         String[] Tags = new String[] { "Feature", "Falcon", "Severe" };
         caps.setCapability("tags", Tags);
@@ -56,32 +59,14 @@ public class TestNGTodo1 {
         System.out.println("Checking Box");
         driver.findElement(By.name("li3")).click();
 
-        System.out.println("Checking Another Box");
-        driver.findElement(By.name("li4")).click();
+        driver.executeScript("lambda-throttle-network", "offline");
+                    Thread.sleep(3000);
 
-        driver.findElement(By.id("sampletodotext")).sendKeys(" List Item 6");
-        driver.findElement(By.id("addbutton")).click();
-
-        driver.findElement(By.id("sampletodotext")).sendKeys(" List Item 7");
-        driver.findElement(By.id("addbutton")).click();
-
-        driver.findElement(By.id("sampletodotext")).sendKeys(" List Item 8");
-        driver.findElement(By.id("addbutton")).click();
-
-        System.out.println("Checking Another Box");
-        driver.findElement(By.name("li1")).click();
-
-        System.out.println("Checking Another Box");
-        driver.findElement(By.name("li3")).click();
-
-        System.out.println("Checking Another Box");
-        driver.findElement(By.name("li7")).click();
-
-        System.out.println("Checking Another Box");
-        driver.findElement(By.name("li8")).click();
-        Thread.sleep(300);
-
+        try{
         System.out.println("Entering Text");
+         driver.get("https://mylocation.org/");
+                                  Thread.sleep(3000);
+
         driver.findElement(By.id("sampletodotext")).sendKeys("Get Taste of Lambda and Stick to It");
 
         driver.findElement(By.id("addbutton")).click();
@@ -97,6 +82,15 @@ public class TestNGTodo1 {
         Thread.sleep(150);
 
         System.out.println("TestFinished");
+        } catch(Exception e){
+             System.out.println(" >>>>>>>>>>>> Handle Error ");
+
+            driver.executeScript("lambda-throttle-network", "reset");
+            Thread.sleep(3000);
+            driver.get("https://www.lambdatest.com/blog/");
+
+        }
+       
 
     }
 
