@@ -8,6 +8,26 @@
       <class name="com.lambdatest.TestNGTodoMobile2"/>
       <class name="com.lambdatest.TestNGTodoMobile3"/>
       <class name="com.lambdatest.TestNGTodoMobile4"/>
+      <class name="com.lambdatest.TestNGTodoMobile5"/>
+      <class name="com.lambdatest.TestNGTodoMobile6"/>
+      <class name="com.lambdatest.TestNGTodoMobile7"/>
+      <class name="com.lambdatest.TestNGTodoMobile8"/>
+      <class name="com.lambdatest.TestNGTodoMobile9"/>
+      <class name="com.lambdatest.TestNGTodoMobile10"/>
+      <class name="com.lambdatest.TestNGTodoMobile11"/>
+      <class name="com.lambdatest.TestNGTodoMobile12"/>
+      <class name="com.lambdatest.TestNGTodoMobile13"/>
+      <class name="com.lambdatest.TestNGTodoMobile14"/>
+      <class name="com.lambdatest.TestNGTodoMobile15"/>
+      <class name="com.lambdatest.TestNGTodoMobile16"/>
+      <class name="com.lambdatest.TestNGTodoMobile17"/>
+      <class name="com.lambdatest.TestNGTodoMobile18"/>
+      <class name="com.lambdatest.TestNGTodoMobile19"/>
+      <class name="com.lambdatest.TestNGTodoMobile20"/>
+      <class name="com.lambdatest.TestNGTodoMobile21"/>
+      <class name="com.lambdatest.TestNGTodoMobile22"/>
+      <class name="com.lambdatest.TestNGTodoMobile23"/>
+      <class name="com.lambdatest.TestNGTodoMobile24"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

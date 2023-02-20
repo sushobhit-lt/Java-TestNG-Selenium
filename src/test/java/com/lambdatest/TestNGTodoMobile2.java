@@ -30,8 +30,8 @@ public class TestNGTodoMobile2 {
         caps.setCapability("platformVersion", "16");
         caps.setCapability("fixedIP", "10.64.112.142");
         caps.setCapability("build", "Mobile TestNG With Java");
-        caps.setCapability("name", "iPhone");
-        // caps.setCapability("plugin", "git-testng");
+        caps.setCapability("name", "10.64.112.142");
+        caps.setCapability("visual", true);
 
         String[] Tags = new String[] { "Feature", "Tag", "Moderate" };
         caps.setCapability("tags", Tags);

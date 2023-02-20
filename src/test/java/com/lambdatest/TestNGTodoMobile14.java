@@ -13,10 +13,11 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TestNGTodoMobile1 {
+public class TestNGTodoMobile14 {
 
     private RemoteWebDriver driver;
     private String Status = "failed";
+    private String fixedIP = "10.64.112.196";
 
     @BeforeMethod
     public void setup(Method m, ITestContext ctx) throws MalformedURLException {
@@ -28,9 +29,9 @@ public class TestNGTodoMobile1 {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName", "iPad (9th generation)");
         caps.setCapability("platformVersion", "16");
-        caps.setCapability("fixedIP", "10.64.112.127");
+        caps.setCapability("fixedIP", fixedIP);
         caps.setCapability("build", "Mobile TestNG With Java");
-        caps.setCapability("name", "10.64.112.127");
+        caps.setCapability("name", fixedIP);
         caps.setCapability("visual", true);
 
         String[] Tags = new String[] { "Feature", "Tag", "Moderate" };

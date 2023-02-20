@@ -28,10 +28,10 @@ public class TestNGTodoMobile4 {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("deviceName", "iPad (9th generation)");
         caps.setCapability("platformVersion", "16");
-        caps.setCapability("fixedIP", "10.64.112.125");
+        caps.setCapability("fixedIP", "10.64.112.150");
         caps.setCapability("build", "Mobile TestNG With Java");
-        caps.setCapability("name", "iPhone");
-        // caps.setCapability("plugin", "git-testng");
+        caps.setCapability("name", "10.64.112.150");
+        caps.setCapability("visual", true);
 
         String[] Tags = new String[] { "Feature", "Tag", "Moderate" };
         caps.setCapability("tags", Tags);
