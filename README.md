@@ -161,7 +161,7 @@ To run parallel tests using **TestNG**, we would have to execute the below comma
 The tests can be executed in the terminal using the following command.
 
 ```bash
-mvn test -D suite=smartui.xml
+mvn test -D suite=rd.xml
 ```
 
 ## Testing Locally Hosted Or Privately Hosted Projects
