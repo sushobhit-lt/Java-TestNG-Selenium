@@ -26,17 +26,16 @@ public class TestNGTodoMobile {
         String hub = "@mobile-hub.lambdatest.com/wd/hub";
 
         DesiredCapabilities caps = new DesiredCapabilities();
-        caps.setCapability("platformName", "android");
-        caps.setCapability("deviceName", "Pixel 4a");
-        caps.setCapability("platformVersion", "11");
+        caps.setCapability("platformName", "ios");
+        caps.setCapability("deviceName", "iPhone 12");
+        caps.setCapability("platformVersion", "16");
         caps.setCapability("isRealMobile", true);
-        caps.setCapability("build", "TestNG With Java");
+        caps.setCapability("visual", true);
+        caps.setCapability("build", "TestNG With Java1");
         caps.setCapability("name", m.getName() + this.getClass().getName());
-        caps.setCapability("plugin", "git-testng");
-        caps.setCapability("smartUI.project", "rd-project");
-        String[] Tags = new String[] { "Feature", "Tag", "Moderate" };
-        caps.setCapability("tags", Tags);
+        caps.setCapability("smartUI.project", "rd-project1");
 
+    
         driver = new RemoteWebDriver(new URL("https://" + username + ":" + authkey + hub), caps);
     }
 
