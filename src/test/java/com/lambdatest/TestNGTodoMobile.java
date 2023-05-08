@@ -33,7 +33,7 @@ public class TestNGTodoMobile {
         caps.setCapability("build", "TestNG With Java");
         caps.setCapability("name", m.getName() + this.getClass().getName());
         caps.setCapability("plugin", "git-testng");
-
+        caps.setCapability("smartUI.project", "rd-project");
         String[] Tags = new String[] { "Feature", "Tag", "Moderate" };
         caps.setCapability("tags", Tags);
 
@@ -46,6 +46,7 @@ public class TestNGTodoMobile {
         System.out.println("Loading Url");
         Thread.sleep(100);
         driver.get("https://lambdatest.github.io/sample-todo-app/");
+        driver.executeScript("smartui.takeScreenshot=demo");
 
         System.out.println("Checking Box");
         driver.findElement(By.name("li1")).click();
