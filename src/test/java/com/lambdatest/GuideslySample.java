@@ -60,8 +60,8 @@ public class GuideslySample {
 
         driver.get("https://guidesly.com");
         Thread.sleep(2000);
-        scrollToBottom(2000);
-        driver.executeScript("smartui.takeFullPageScreenshot=home-page");
+        driver.executeScript("smartui.takeFullPageScreenshot,{\"screenshotName\":\"home-page\", \"smartScroll\":true }");
+
         System.out.println("home-page Saved");
         Thread.sleep(1000);
 
@@ -69,9 +69,8 @@ public class GuideslySample {
         System.out.println("Loading Bio Page");
 
         driver.get("https://guidesly.com/book-a-guide/guide-details/Tuna-Wahoo-Charters?tripDate=2023-04-21&guests=1");
-        scrollToBottom(2000);
 
-        driver.executeScript("smartui.takeFullPageScreenshot=guide-bio-page");
+        driver.executeScript("smartui.takeFullPageScreenshot,{\"screenshotName\":\"guide-bio-page\", \"smartScroll\":true }");
         Thread.sleep(1000);
 
         System.out.println("guide-bio-page Saved");
@@ -80,12 +79,12 @@ public class GuideslySample {
 
         driver.get("https://guidesly.com/search?address=Tambaram%2C+Tamil+Nadu&latitude=12.94336&longitude=80.1570816&guest=1&category=alltrips&page=1");
         Thread.sleep(2000);
-        quickScrollToBottom(5000);
-        driver.executeScript("smartui.takeFullPageScreenshot=search-page");
+        driver.executeScript("smartui.takeFullPageScreenshot,{\"screenshotName\":\"search-page\", \"smartScroll\":true }");
+
         Thread.sleep(1000);
 
         System.out.println("search-page Saved");
-
+        this.Status= "passed";
 
     }
 
