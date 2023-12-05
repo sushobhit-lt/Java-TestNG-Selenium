@@ -4,6 +4,7 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.*;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -13,11 +14,14 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class TestNGSmartUI {
+public class TestNGSmartUIChrome {
 
   private RemoteWebDriver driver;
   private String Status = "failed";
   private String githubURL = System.getenv("GITHUB_URL");
+  public static String generatedString = RandomStringUtils.randomAlphanumeric(
+    10
+  );
 
   @BeforeMethod
   public void setup(Method m, ITestContext ctx) throws MalformedURLException {
@@ -36,7 +40,8 @@ public class TestNGSmartUI {
     caps.setCapability("build", "TestNG With Java");
     caps.setCapability("name", m.getName() + " - " + this.getClass().getName());
     caps.setCapability("plugin", "git-testng");
-    caps.setCapability("smartUI.project", "testng-smartui-web-project");
+    caps.setCapability("smartUI.project", "testng-smartui-web-project-parallel");
+    caps.setCapability("smartUI.build", generatedString);
     caps.setCapability("selenium_version", "4.8.0");
 
     if (githubURL != null) {
@@ -55,29 +60,25 @@ public class TestNGSmartUI {
   @Test
   public void basicTest() throws InterruptedException {
     String spanText;
-    System.out.println("Loading URL");
+    System.out.println("Loading Url");
 
     driver.get("https://www.lambdatest.com/");
     Thread.sleep(5000);
 
-    System.out.println("Taking FullPage Screenshot");
-    driver.executeScript("smartui.takeFullPageScreenshot=home-page");
+    driver.executeScript("smartui.takeScreenshot=home-page");
     Thread.sleep(1000);
 
     driver.get("https://www.lambdatest.com/pricing");
     Thread.sleep(5000);
 
-    System.out.println("Taking Pricing Page Screenshot");
     driver.executeScript("smartui.takeScreenshot=pricing-page");
     Thread.sleep(1000);
 
     driver.get("https://www.lambdatest.com/support/docs/");
     Thread.sleep(5000);
-
-    System.out.println("Taking Docs Page Screenshot");
     driver.executeScript("smartui.takeScreenshot=docs");
     Status = "passed";
-    System.out.println("TestFinished");
+    System.out.println("TestNGSmartUIChrome TestFinished");
   }
 
   @AfterMethod
